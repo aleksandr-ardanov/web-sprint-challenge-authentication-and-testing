@@ -122,6 +122,7 @@ describe("server", () => {
       res = await request(server).get('/api/jokes').set('Authorization', token)
       expect(res.body).toHaveLength(3)
       expect(res.body).toMatchObject(jokes)
+      expect(res.status).toBe(200)
     })
   })
 })
