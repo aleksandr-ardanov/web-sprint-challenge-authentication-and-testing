@@ -24,7 +24,7 @@ We will hash the user's password using `bcryptjs`, and use JSON Web Tokens and t
 
 ### Task 1: Project Set Up
 
-- [ ] Fork and clone the repo. Delete your old fork from Github first if you are repeating this Unit.
+- [x] Fork and clone the repo. Delete your old fork from Github first if you are repeating this Unit.
 - [ ] Open the assignment in Canvas and click on the "Set up git" option.
 - [ ] Follow instructions to set up Codegrade's Webhook and Deploy Key.
 - [ ] Push your first commit: `git commit --allow-empty -m "first commit" && git push`.
@@ -76,6 +76,10 @@ These goals may or may not be things you have learned in this module but they bu
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics.
 
 1. Differences between using _sessions_ or _JSON Web Tokens_ for authentication.
+   sessions uses cookies which travels between server and user, unlike tokens stored on users side and not stored on the server
 2. What does `bcryptjs` do to help us store passwords in a secure manner?
+   it hashes passwords and makes them unreadable and secured until secret, rounds hidden
 3. How are unit tests different from integration and end-to-end testing?
+   unit tests check isolated parts of code, unlike integration tests check how parts of code interact with each other and end-to-end check full users experience
 4. How does _Test Driven Development_ change the way we write applications and tests?
+   it may help developer to understand what he need from the code and make it better
