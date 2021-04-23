@@ -3,8 +3,8 @@ const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs')
 const Users = require('./users-model')
 const {JWT_SECRET} = require('../secrets/index')
-const {checkUsernameExists} = require('../middleware/restricted')
-router.post('/register', (req, res, next) => {
+const {checkUsernameExists, checkUsernameIsTaken} = require('../middleware/restricted')
+router.post('/register', checkUsernameIsTaken, (req, res, next) => {
 
   /*
     IMPLEMENT

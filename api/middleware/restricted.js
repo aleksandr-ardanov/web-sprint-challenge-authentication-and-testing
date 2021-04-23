@@ -44,9 +44,24 @@ const checkUsernameExists = async (req,res,next) =>{
   }
 }
 
+const checkUsernameIsTaken = async (req,res,next) => {
+  const {username, password} = req.body;
+  if (username && password){
+    const [check] = await Users.findBy({username})
+    if (!check){
+       next()
+    } else{
+      res.status(401).json({message:"username taken"})
+    }
+  } else{
+    res.status(401).json({message:"username and password required"})
+  }
+}
+
 
 
 module.exports = {
   restrict,
-  checkUsernameExists
+  checkUsernameExists,
+  checkUsernameIsTaken
 }
